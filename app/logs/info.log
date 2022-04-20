@@ -1,0 +1,8 @@
+[2022-04-20 01:18:47,391] 172.23.0.1 requested http://127.0.0.1/about
+INFO in __init__: this is the plain message
+[2022-04-20 01:18:47,772] 172.23.0.1 requested http://127.0.0.1/dashboard
+INFO in __init__: this is the plain message
+[2022-04-20 01:18:48,215] 172.23.0.1 requested http://127.0.0.1/welcome
+INFO in __init__: this is the plain message
+[2022-04-20 01:18:48,599] 172.23.0.1 requested http://127.0.0.1/about
+INFO in __init__: this is the plain message
