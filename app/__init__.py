@@ -132,6 +132,7 @@ def create_app():
         line = " ".join(parts)
         #this triggers a log entry to be created with whatever is in the line variable
         app.logger.info('this is the plain message')
+        app.logger.debug('this is the debug level message')
 
         return response
 
@@ -144,3 +145,25 @@ def user_loader(user_id):
         return User.query.get(int(user_id))
     except:
         return None
+
+        # get root directory of project
+        root = os.path.dirname(os.path.abspath(__file__))
+        # set the name of the apps log folder to logs
+        logdir = os.path.join(root, 'logs')
+        # make a directory if it doesn't exist
+        if not os.path.exists(logdir):
+            os.mkdir(logdir)
+        # set name of the log file
+        log_file = os.path.join(logdir, 'debug.log')
+
+    handler = logging.FileHandler(log_file)
+    # Create a log file formatter object to create the entry in the log
+    formatter = RequestFormatter(
+        '[%(asctime)s] %(remote_addr)s requested %(url)s\n'
+    )
+    # set the formatter for the log entry
+    handler.setFormatter(formatter)
+    # Set the logging level of the file handler object so that it logs INFO and up
+    handler.setLevel(logging.debug)
+    # Add the handler for the log entry
+    app.logger.addHandler(handler)
