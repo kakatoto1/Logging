@@ -1,3 +1,4 @@
 import os.path
- log_file = os.path.exists('info.log')
+def log_test_exist():
+    log_file = ('info.log')
 assert os.path.exists(log_file) == True
