@@ -1,3 +1,3 @@
 import os
 
-assert os.path.exists(log_file) == True
+assert os.path.exists("info.log") == True
